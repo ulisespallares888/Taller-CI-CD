@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cfab72f-f7fc-4326-95d7-04b62e9c8395" name="Changes" comment="Hello world3">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
+    <list default="true" id="4cfab72f-f7fc-4326-95d7-04b62e9c8395" name="Changes" comment="Hello worldd">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +123,31 @@
       <option name="project" value="LOCAL" />
       <updated>1747197004093</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Hello world3">
+      <option name="closed" value="true" />
+      <created>1747197223436</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747197223436</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Hello worldd">
+      <option name="closed" value="true" />
+      <created>1747197289515</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747197289515</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Hello worldd">
+      <option name="closed" value="true" />
+      <created>1747197898012</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747197898012</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,6 +164,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Cambios" />
     <MESSAGE value="Hello world3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hello world3" />
+    <MESSAGE value="Hello worldd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hello worldd" />
   </component>
 </project>
