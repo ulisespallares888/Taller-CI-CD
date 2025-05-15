@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven_3.8.1'
+        maven 'maven'
     }
     stages {
         stage('Checkout') {
@@ -19,10 +19,27 @@ pipeline {
         stage('Test') {
             steps {
                   dir('ci-taller-demo') {
-                sh 'mvn test'
+                    sh 'mvn test'
+                    }
                   }
             }
-        }
+
+       stage('Deploy') {
+                steps {
+                    dir('ci-taller-demo') {
+                        // Detenemos contenedor si ya existe
+                        sh '''
+                            docker stop demo-app || true
+                            docker rm demo-app || true
+                            docker rmi demo-app || true
+                        '''
+                        // Build de imagen
+                        sh 'docker build -t demo-app .'
+                        // Run del contenedor
+                        sh 'docker run -d --name demo-app -p 8080:8080 demo-app'
+                    }
+                }
+            }
 
     }
 }
