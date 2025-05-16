@@ -11,23 +11,23 @@ pipeline {
         }
         stage('Build') {
             steps {
-                 dir('ci-taller-demo') {
-                sh 'mvn clean package'
+                dir('ci-taller-demo') {
+                    sh 'mvn clean package'
                  }
             }
         }
         stage('Test') {
             steps {
-                  dir('ci-taller-demo') {
+                dir('ci-taller-demo') {
                     sh 'mvn test'
                     }
                   }
             }
 
        stage('Deploy') {
-                steps {
-                    dir('ci-taller-demo') {
-                        // Detenemos contenedor si ya existe
+            steps {
+                dir('ci-taller-demo') {
+                    // Detenemos contenedor si ya existe
                         sh '''
                             docker stop demo-app || true
                             docker rm demo-app || true
@@ -40,6 +40,24 @@ pipeline {
                     }
                 }
             }
+        }
 
+
+     post {
+            success {
+                sh '''
+                    curl -s -X POST "https://api.telegram.org/bot7859277225:AAFFKDo8cJRrdCjo1o_Mp5qqxnP8c7zvSZg/sendMessage" \
+                    -d chat_id=6104407892 \
+                    -d text="✅ Éxito: Pipeline completado correctamente en Jenkins."
+                '''
+            }
+
+            failure {
+                sh '''
+                    curl -s -X POST "https://api.telegram.org/bot7859277225:AAFFKDo8cJRrdCjo1o_Mp5qqxnP8c7zvSZg/sendMessage" \
+                    -d chat_id=6104407892 \
+                    -d text="❌ Error: Falló el pipeline en Jenkins. Revisar logs."
+                '''
+            }
+        }
     }
-}
